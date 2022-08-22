@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+body {
+  background: linear-gradient(14deg, #1a2a6c, #b21f1f, #fdbb2d);
+}
+
+.Canvas {
+  border: 1px solid lightgrey;
+}
+
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -14,7 +23,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: linear-gradient(14deg, #1a2a6c, #b21f1f, #fdbb2d);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
