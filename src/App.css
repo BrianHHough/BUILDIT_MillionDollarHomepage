@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  height: 100vh;
+  margin-bottom: 200px;
 }
 
 body {
@@ -8,6 +10,7 @@ body {
 
 .Canvas {
   border: 1px solid lightgrey;
+  width: 1000;
 }
 
 
@@ -31,6 +34,7 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  bottom: 200px;
 }
 
 .App-link {
