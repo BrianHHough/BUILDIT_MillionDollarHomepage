@@ -11,6 +11,7 @@ import awsExports from '../aws-exports';
 Amplify.configure(awsExports);
 
 
+
 function Grid() {
     const ref = useRef();
     const [NFTImageSuccess, setNFTImageSuccess] = useState();
@@ -20,15 +21,27 @@ function Grid() {
     const NFTMetadataInputs = {
         name: "",
         description: "",
-        image: "",
-        }
-        const [NFT, setNFT] = useState(NFTMetadataInputs);
-        
-    function onChange(e) {
-        setNFTImage(() => ({
-            ...NFT, [e.target.value]: e.target.value
+        image: `${NFTImage ? NFTImage : ""}`,
+        // image: `${NFTImage ? NFTImage[0] : ""}`,
+    }
+    
+    
+    const [nft, setNFT] = useState(NFTMetadataInputs);
+
+    function handleChange(e) {
+        const value = e.target.value;
+        setNFT(() => ({
+            ...nft, [e.target.value]: value
         }))
     }
+
+    useEffect(() => {
+        console.log(nft);
+    }, [setNFT])
+
+    // useEffect(() => {
+    //     setNFT(...nft, nft.image, NFTImage[0] )
+    // }, [setNFTImage])
 
     
 
@@ -95,7 +108,7 @@ function Grid() {
             }}>
                 <h2>Mint an NFT</h2>
                 <p>Drag and drop an image:</p>
-                <form>
+                
                     <Dropzone 
                         accept={"image/jpeg, image/png, image/webp"}
                         
@@ -156,29 +169,39 @@ function Grid() {
                         </div>
                     )
                 })}
+
                 <div style={{display: "inline-grid"}}>
                     <input 
+                        key="name"
                         name="name"
                         placeholder="Name your NFT..."
-                        value={onChange}
+                        onChange={handleChange}
+                        value={nft.name}
+                        // value={"Our test NFT :)"}
+                        required
                     />
 
                     <input 
+                        key="description"
                         name="description"
                         placeholder="Add a description..."
-                        value={onChange}
+                        onChange={handleChange}
+                        value={nft.description}
+                        // value={"NFT Description"}
+                        required
                     />
 
                     <input 
                         name="name"
                         value={userAddress}
+                        readOnly
                     />
+                    <input />
 
-                    <button type="submit">MINT</button>
+                    <button type="submit" onClick={(e) => alert(`nft submitted: ${JSON.stringify(nft)}`)}>MINT</button>
                 </div>
-                </form>
 
-                {console.log(NFT)}
+                {console.log(nft)}
 
                 </div>
             </div>
