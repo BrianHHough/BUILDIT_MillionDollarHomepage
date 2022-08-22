@@ -11,5 +11,18 @@
       "StackId": "arn:aws:cloudformation:us-east-1:289971349213:stack/amplify-milliondollarhome-dev-154412/ccb65f00-2252-11ed-ac46-0a25538b0e07",
       "AmplifyAppId": "d2deev5adippsr"
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-milliondollarhome-prod-155227-authRole",
+      "UnauthRoleArn": "arn:aws:iam::289971349213:role/amplify-milliondollarhome-prod-155227-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::289971349213:role/amplify-milliondollarhome-prod-155227-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-milliondollarhome-prod-155227-deployment",
+      "UnauthRoleName": "amplify-milliondollarhome-prod-155227-unauthRole",
+      "StackName": "amplify-milliondollarhome-prod-155227",
+      "StackId": "arn:aws:cloudformation:us-east-1:289971349213:stack/amplify-milliondollarhome-prod-155227/f3abdcb0-2253-11ed-8358-125549a4bd11",
+      "AmplifyAppId": "d2deev5adippsr"
+    }
   }
 }
