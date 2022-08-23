@@ -30,10 +30,16 @@ function Grid() {
 
     function handleChange(e) {
         const value = e.target.value;
-        setNFT(() => ({
-            ...nft, [e.target.value]: value
-        }))
+        setNFT({
+            ...nft, [e.target.name]: value
+        })
     }
+
+    useEffect(() => {
+        if(NFTImageSuccess) {
+            setNFT({...nft, image: NFTImage[0]})
+        }
+    }, [NFTImageSuccess] )
 
     useEffect(() => {
         console.log(nft);
@@ -196,7 +202,6 @@ function Grid() {
                         value={userAddress}
                         readOnly
                     />
-                    <input />
 
                     <button type="submit" onClick={(e) => alert(`nft submitted: ${JSON.stringify(nft)}`)}>MINT</button>
                 </div>
